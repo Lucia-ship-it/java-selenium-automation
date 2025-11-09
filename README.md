@@ -18,6 +18,7 @@ Working with the framework is divided according to elements of the testing appli
 - `search("Jan")` - search for an application from Jan
 - `clickEditFirstApplicationButton()` - open the first application to edit details
 
+
 **ApplicationDetail** - Allows you to work with application details page:
 - `selectTerm(String term)` - select a term
 - `insertStudentFirstName("Jan")` - insert student first name
