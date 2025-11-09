@@ -17,7 +17,7 @@ Working with the framework is divided according to elements of the testing appli
 - `openFirstApplicationDetailsPage()` - open an existing application to see details
 - `search("Jan")` - search for an application from Jan
 - `clickEditFirstApplicationButton()` - open the first application to edit details
-
+//sss
 
 **ApplicationDetail** - Allows you to work with application details page:
 - `selectTerm(String term)` - select a term
