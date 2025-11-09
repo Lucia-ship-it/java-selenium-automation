@@ -49,4 +49,42 @@ final class LoginAction {
         var logoutButton = elementFinder.findByXPath("//*[@id='logout-link']");
         logoutButton.click();
     }
+
+    void clickRegistrationButton() {
+        var registrationButton = elementFinder.findByXPath("/html/body/div/div/div/div/div/div/form/div[4]/div/a");
+        registrationButton.click();
+    }
+
+    void insertNameRegistration(String name) {
+        Objects.requireNonNull(name);
+
+        var registrationName = elementFinder.findByXPath("//*[@id=\"name\"]");
+        registrationName.sendKeys(name);
+    }
+
+    void insertEmailRegistration(String email) {
+        Objects.requireNonNull(email);
+
+        var registrationEmail = elementFinder.findByXPath("//*[@id=\"email\"]");
+        registrationEmail.sendKeys(email);
+    }
+
+    void insertPasswordRegistration(String password) {
+        Objects.requireNonNull(password);
+
+        var registrationPassword = elementFinder.findByXPath("//*[@id=\"password\"]");
+        registrationPassword.sendKeys(password);
+    }
+
+    void insertVerificationPasswordRegistration(String passwordCheck) {
+        Objects.requireNonNull(passwordCheck);
+
+        var registrationPasswordVer = elementFinder.findByXPath("//*[@id=\"password-confirm\"]");
+        registrationPasswordVer.sendKeys(passwordCheck);
+    }
+
+    void clickFinalRegistrationButton() {
+        var zaregistrovatButton = elementFinder.findByXPath("/html/body/div/div/div/div/div/div[2]/form/div[5]/div/button");
+        zaregistrovatButton.click();
+    }
 }
