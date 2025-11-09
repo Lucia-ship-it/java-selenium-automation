@@ -45,6 +45,7 @@ Working with the framework is divided according to elements of the testing appli
 - `insertPassword("mySecurePass123")` - insert password
 - `clickLoginButton()` - click login button once credentials are provided
 - `logout()` - logout
+- `clickFinalRegistrationButton` - registration button
 
 **ProfileAction** - allows you to work with customer profile:
 - `goToProfilePage()` - open profile page from top menu
@@ -75,3 +76,6 @@ Working with the framework is divided according to elements of the testing appli
 `checkRemainingAmountToPay("100.00")` - check that remaining amount to pay is _100.00_ Kč
 `checkTerm("05.02. - 09.02.2024")` - check that the term is _05.02. - 09.02.2024_
 `checkMessageContainsStudentLastName("Novak")` - ensure that _Zpráva pro příjemce_ contains student last name _Novak_
+`checkRegistrationButtonPresense` - check that the registration button is located on page
+`checkPagePrihlasky` - check that after log in is user on page "Přihlášky"
+`checkChangingPassword` - should check, that changing of passwodr was succesfull - update is needed
