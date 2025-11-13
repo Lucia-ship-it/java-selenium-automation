@@ -56,4 +56,8 @@ public final class AssertionFacade {
         var pageElementText = elementFinder.findByXPath("/div/button");
         assertThat(pageElementText.getText()).contains("úspěšně");
     }
+    public void checkCautionLogin() {
+        var nespravnyLogin = elementFinder.findByXPath("/html/body/div/div/div/div/div/div/form/div[1]/div/span/strong");
+        assertThat(nespravnyLogin.getText()).contains("přihlašovací údaje");
+    }
 }

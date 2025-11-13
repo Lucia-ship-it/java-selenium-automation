@@ -62,4 +62,6 @@ public final class ApplicationDetailAssertion {
         var dateElement = elementFinder.findByCssSelector(".card-body h4");
         assertThat(dateElement.getText()).contains(term);
     }
+
+
 }
