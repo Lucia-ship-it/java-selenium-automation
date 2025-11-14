@@ -97,11 +97,6 @@ final class OrderAction {
         Adult.sendKeys(String.valueOf(adult));
     }
 
-    void chooseTime() {
-        var schoolInNatureTimeAdd= elementFinder.findByXPath("//*[@id=\"camp-date_part\"]/option[1]");
-        schoolInNatureTimeAdd.click();
-    }
-
     void clickFroSave() {
         var saveButton= elementFinder.findByXPath("//*[@id=\"nav-home\"]/div[2]/input");
         saveButton.click();
@@ -118,8 +113,33 @@ final class OrderAction {
     }
 
 
+    void countKid(int kidsum) {
+        var kidCount = elementFinder.findByXPath("//*[@id=\"nature-students\"]");
+        kidCount.sendKeys(String.valueOf(kidsum));
+    }
 
+    void kidAge(int Age) {
+        var inputAge = elementFinder.findByXPath("//*[@id=\"nature-age\"]");
+        inputAge.sendKeys(String.valueOf(Age));
+    }
+
+    void insertCountadult(int adultCount) {
+        var Adult = elementFinder.findByXPath("//*[@id=\"nature-adults\"]");
+        Adult.sendKeys(String.valueOf(adultCount));
+    }
+
+    void chooseTime(String startCas) {
+        var schoolInNatureTimeAdd= elementFinder.findByXPath("//*[@id=\"nature-start_time\"]");
+        schoolInNatureTimeAdd.sendKeys(String.valueOf(startCas));
+    }
+
+    void chooseTimeEnd(String endCas) {
+        var schoolInNatureTimeAdd= elementFinder.findByXPath("//*[@id=\"nature-end_time\"]");
+        schoolInNatureTimeAdd.sendKeys(String.valueOf(endCas));
+    }
+
+    void clickFroSaveSchoolOrder() {
+        var saveButton= elementFinder.findByXPath("//*[@id=\"nav-profile\"]/div[2]/input");
+        saveButton.click();
+    }
 }
-
-
-

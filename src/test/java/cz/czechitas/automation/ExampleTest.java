@@ -213,8 +213,33 @@ final class ExampleTest extends TestRunner {
         asserter.checkNumberOfOrders(1);
     }
 
+    @Test
+    void orderSchoolInNature() {
+        var randomAdresa = browser.generateRandomName(10);
+        var randomMeno = "Eugen " + browser.generateRandomName(6);
+
+        browser.headerMenu.goToKindergartenAndSchoolSection();
+        browser.orderSection.insertICO("22834958");
+        browser.waitFor(1);
+        browser.orderSection.insertOdberatel("ZS U maku a raku");
+
+        browser.orderSection.insertAdresa(randomAdresa);
+        browser.orderSection.insertPrincipal("Peter Chata");
+        browser.orderSection.insertName(randomMeno);
+        browser.orderSection.insertTel(123456789);
+        browser.orderSection.insertEmail("skolaN@email.com");
+        browser.orderSection.insertStartDate("15.11.2026");
+        browser.orderSection.insertEndDate("24.11.2026");
+        browser.orderSection.selectSchoolInNatureOption();
+        browser.orderSection.countKid(13);
+        browser.orderSection.kidAge(11);
+        browser.orderSection.insertCountadult(4);
+        browser.orderSection.chooseTime("08:00");
+        browser.orderSection.chooseTimeEnd("11:00");
+
+        browser.orderSection.clickFroSaveSchoolOrder();
+        browser.waitFor(1);
+        asserter.checkOrderAccept();
+    }
 
 }
-
-
-
