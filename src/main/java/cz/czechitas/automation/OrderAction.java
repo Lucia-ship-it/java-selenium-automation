@@ -3,6 +3,8 @@ package cz.czechitas.automation;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.Objects;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 /**
  * Public order selenium actions
  *
@@ -114,6 +116,9 @@ final class OrderAction {
         var FindName = elementFinder.findByXPath("//*[@id=\"DataTables_Table_0_filter\"]/label/input");
         FindName.sendKeys(String.valueOf(tel));
     }
+
+
+
 }
 
 

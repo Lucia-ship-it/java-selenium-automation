@@ -172,19 +172,49 @@ final class ExampleTest extends TestRunner {
         browser.orderSection.insertAGE(14);
         browser.orderSection.insertadult(3);
         browser.orderSection.clickFroSave();
+        browser.waitFor(1);
+        asserter.checkOrderAccept();
+        }
+
+    @Test
+    void orderInOrders() {
+        var randomAdresa = browser.generateRandomName(13);
+        var randomMeno = "Mima " + browser.generateRandomName(4);
+
+        browser.headerMenu.goToKindergartenAndSchoolSection();
+        browser.orderSection.insertICO("22834958");
+        browser.waitFor(1);
+        browser.orderSection.insertOdberatel("ZS U obloucku");
+
+        browser.orderSection.insertAdresa(randomAdresa);
+        browser.orderSection.insertPrincipal("Organizovana");
+        browser.orderSection.insertName(randomMeno);
+        browser.orderSection.insertTel(333333333);
+        browser.orderSection.insertEmail("oficial@email.com");
+        browser.orderSection.insertStartDate("10.10.2026");
+        browser.orderSection.insertEndDate("23.10.2026");
+        browser.orderSection.selectSuburbanCampOption();
+        browser.orderSection.insertChildrenCount(8);
+        browser.orderSection.insertAGE(11);
+        browser.orderSection.insertadult(4);
+        browser.orderSection.clickFroSave();
+        browser.waitFor(1);
+        asserter.checkOrderAccept();
 
         browser.headerMenu.goToHomePage();
         browser.loginSection.clickLoginMenuLink();
         browser.loginSection.insertEmail("da-app.admin@czechitas.cz");
         browser.loginSection.insertPassword("Czechitas123");
         browser.loginSection.clickLoginButton();
-        browser.
-        //dorobit orders section
-        browser.internalMenu.goToMYOrdersSection();
+
+        browser.waitFor(1);
+        browser.internalMenu.goToOrdersSection();
         browser.orderSection.findName(randomMeno);
-        asserter.applicationSection.checkNumberOfApplications(1);
-        }
+        asserter.checkNumberOfOrders(1);
+    }
+
 
 }
+
 
 

@@ -60,4 +60,14 @@ public final class AssertionFacade {
         var nespravnyLogin = elementFinder.findByXPath("/html/body/div/div/div/div/div/div/form/div[1]/div/span/strong");
         assertThat(nespravnyLogin.getText()).contains("přihlašovací údaje");
     }
+    public void checkNumberOfOrders(int applicationsNumber) {
+        var orderCountElement = elementFinder.findByXPath("//*[@id=\"DataTables_Table_0_wrapper\"]/div[2]/div");
+        assertThat(orderCountElement.getText()).contains("Zobrazeno " + applicationsNumber + " až " + applicationsNumber +
+                " záznamů z " + applicationsNumber);
+    }
+
+    public void checkOrderAccept() {
+        var potvrdenieObjednavky = elementFinder.findByXPath("/html/body/div/div/div/div/div/div/p");
+        assertThat(potvrdenieObjednavky.getText()).contains("úspěšně");
+    }
 }

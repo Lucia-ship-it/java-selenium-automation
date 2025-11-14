@@ -24,10 +24,7 @@ final class InternalMenuAction {
         ordersMenuItem.click();
     }
 
-    void goToMYOrdersSection() {
-        var ordersMenuItem = elementFinder.findByXPath(" //*[@id=\"adminNavbar\"]/div/a[1]");
-        ordersMenuItem.click();
-    }
+
 
 
     void goToTermsSection() {
